@@ -1,0 +1,119 @@
+@import "../variables";
+
+.PlanCard{
+	$borderRadius: 5px;
+	position: relative;
+	box-shadow: 3px 3px 15px 0 hsl(0, 0%, 70%);
+	border-radius: $borderRadius;
+	transition: .15s;
+	&:hover{
+		transform: scale(1.01);
+		box-shadow: 5px 5px 17px 0 hsl(0, 0%, 60%);
+	}
+	&--popular::before{
+		$width: 100%;
+		content: "Most popular";
+		display: block;
+		position: absolute;
+		box-sizing: border-box;
+		bottom: calc(100% - #{$borderRadius});
+		left: (100% - $width) / 2;
+		width: $width;
+		border-radius: $borderRadius $borderRadius 0 0;
+		padding: .3em 1em .7em;
+		color: $backgroundColor;
+		background: linear-gradient(to bottom, lighten($textColor, 20), $textColor);
+		text-align: center;
+	}
+	&Header{
+		border-radius: $borderRadius $borderRadius 0 0;
+		position: relative;
+		box-sizing: border-box;
+		text-align: center;
+		color: $backgroundColor;
+		background-color: lighten($primaryColor, 10);
+		padding: .5em 1em 0;
+		height: 360px;
+		&__title{
+			position: relative;
+			color: $textColor;
+			text-transform: uppercase;
+			font-size: 1.4em;
+			font-weight: $fontNormal;
+			margin: 0 auto;
+			padding: .8em 0;
+			width: 76%;
+			border-bottom: 2px solid $textColor;
+		}
+		&__summary{
+			margin: .5em 0 0;
+		}
+		&__price{
+			font-size: 400%;
+			font-weight: $fontThick;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			&::before{
+				content: "$";
+				font-size: 2rem;
+				margin-top: .7rem;
+			}
+		}
+		&__conditions{
+			margin: 0 0 1rem;
+			font-size: .9em;
+		}
+		&__container{
+			display: flex;
+			justify-content: center;
+		}
+		&__cta{
+			$height: 60px;
+			position: absolute;
+			bottom: $height / -2;
+			height: $height;
+			padding: 0 1rem;
+			text-decoration: none;
+			color: $backgroundColor;
+			background: linear-gradient(to bottom, lighten($secondaryColor, 15), $secondaryColor);
+			border-radius: 3px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			box-sizing: border-box;
+			font-size: 1.2rem;
+			font-weight: $fontThick;
+			&Upper{
+				text-transform: uppercase;
+				margin: 0 0.3rem;
+			}
+		}
+	}
+	&Body{
+		padding: 3rem 1em .5em;
+		background-color: white;
+		&__getfrom{
+			color: gray;
+			font-weight: $fontNormal;
+		}
+		&__title{
+			text-transform: uppercase;
+			font-size: 1.2rem;
+			font-weight: $fontThick;
+			text-align: center;
+			color: $textColor;
+		}
+		&__list{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			&Item{
+				margin: 1rem 0;
+				color: gray;
+				font-weight: $fontThin;
+			}
+		}
+	}
+}

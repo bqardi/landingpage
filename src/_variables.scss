@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+$fontStack: Lato, Verdana, Arial, sans-serif;
+$fontSize: calc(16px + (21 - 16) * (100vw - 412px) / (1920 - 412));
+$fontThin: 300;
+$fontNormal: 400;
+$fontThick: 700;
+$headerHeight: 48px;
+
+// Colors
+$primaryColor: hsl(220, 50%, 50%);
+$secondaryColor: hsl(220, 50%, 30%);
+$textColor: hsl(0, 0%, 8%);
+$backgroundColor: hsl(0, 0%, 97%);

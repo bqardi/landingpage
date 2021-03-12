@@ -1,0 +1,49 @@
+@import "../variables";
+
+.PrimaryNavigation{
+	background-color: $primaryColor;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: $headerHeight;
+	&__brand{
+		color: $backgroundColor;
+		text-decoration: none;
+		font-size: 1.5rem;
+		font-weight: $fontThin;
+		margin-left: 1rem;
+	}
+	&__link{
+		color: $backgroundColor;
+		background-color: lighten($primaryColor, 5);
+		width: 100%;
+		padding: 1rem;
+		box-sizing: border-box;
+		text-align: center;
+		text-decoration: none;
+		font-weight: $fontThin;
+		margin: 0 0.5rem;
+		&:hover{
+			color: $secondaryColor;
+		}
+	}
+	&__title{
+		display: flex;
+		align-items: center;
+		color: $backgroundColor;
+		font-weight: $fontThin;
+		height: 48px;
+		margin: 0;
+	}
+	@media only screen and (min-width: 480px) {
+		&__link{
+			color: $backgroundColor;
+			background-color: unset;
+			width: unset;
+			padding: 0;
+		}
+		&__title{
+			display: none;
+		}
+}
+}

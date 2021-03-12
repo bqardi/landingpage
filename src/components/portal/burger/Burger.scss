@@ -1,0 +1,108 @@
+@import "../../../variables";
+
+.Burger{
+    $color: $backgroundColor;
+    display: flex;
+    justify-content: flex-end;
+    &__button{
+        padding: 0.4em;
+        border: none;
+        outline: 0;
+        background-color: transparent;
+        & svg{
+            fill: $color;
+        }
+        &:hover{
+            background-color: $secondaryColor;
+        }
+    }
+    &__portal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: opacity .3s, visibility .3s;
+    }
+    &__portal[open]{
+        opacity: 1;
+        visibility: visible;
+    }
+    &__item{
+        color: black;
+    }
+}
+
+// Required:
+// (don't change any of these, unless you know what you are doing):
+// (EXCEPTION! if you need a different breakpoint, you must change it in
+// the media query below)
+
+.Burger{
+    position: relative;
+    &__button{
+        height: 100%;
+        & svg, & img{
+            width: 100%;
+            display: block;
+        }
+    }
+    &__static{
+        display: none;
+        height: 100%;
+    }
+    &__SlideIn{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        bottom: 0;
+        width: calc(100% - #{$headerHeight});
+        height: 100%;
+        transition: left .3s;
+    }
+    &__portal[open] &__SlideIn{
+        left: 0;
+    }
+    &__nav{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: $primaryColor;
+    }
+    // Change the breakpoint from 768px to
+    // whichever breakpoint you want:
+    @media only screen and (min-width: 480px) {
+        &__button{
+            display: none;
+        }
+        &__portal{
+            display: none;
+        }
+        &__static{
+            display: block;
+        }
+        &__SlideIn{
+            position: static;
+            top: unset;
+            left: unset;
+            bottom: unset;
+            width: unset;
+            background-color: transparent;
+        }
+        &__nav{
+            flex-direction: row;
+            justify-content: flex-end;
+            background-color: transparent;
+        }
+        &__item{
+            color: white;
+        }
+    }
+}

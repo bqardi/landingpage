@@ -1,0 +1,17 @@
+.Plans{
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: 3em 1em;
+	padding: 2em;
+	@media only screen and (min-width: 680px) {
+		& {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@media only screen and (min-width: 1188px) {
+		& {
+			margin-top: 2rem;
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}
