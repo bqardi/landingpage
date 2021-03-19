@@ -7,28 +7,28 @@ function Gallery(){
 			<Carousel.Item>
 				<Gallery.CarouselItem
           src="https://picsum.photos/1920/1080?random=0"
-          alt="Vores shop"
-          text="Køb vores ting!"
+          alt="Our shop"
+          text="Buy our stuff!"
           ctaLink="/shop"
-          ctaText="Klik her"
+          ctaText="Click here"
         />
 				</Carousel.Item>
 				<Carousel.Item>
 					<Gallery.CarouselItem
 						src="https://picsum.photos/1920/1080?random=1"
-						alt="Fra start"
-						text="Vær med fra starten"
+						alt="News now"
+						text="Get news right away"
 						ctaLink="/news-letter"
-						ctaText="Tilmeld dig nuuuuuu!"
+						ctaText="Sign up now"
 					/>
 				</Carousel.Item>
 				<Carousel.Item>
 					<Gallery.CarouselItem
 						src="https://picsum.photos/1920/1080?random=2"
 						alt="Feta osten er osten over alle oste"
-						text="Synes du også Feta er verdens bedste ost?"
+						text="Do you also think the Feta cheese is the best?"
 						ctaLink="/feta"
-						ctaText="Jaaa!"
+						ctaText="Yeah!"
 						/>
 				</Carousel.Item>
 		</Carousel>
@@ -41,7 +41,14 @@ function CarouselItem({src, alt, text, ctaLink, ctaText}){
 			<img className="Gallery__image" src={src} alt={alt}/>
 			<div className="Gallery__content">
 				<p className="Gallery__text">{text}</p>
-				<a className="Gallery__cta" href={ctaLink}>{ctaText}</a>
+				<a
+				// eslint-disable-next-line
+					onClick={gtag("event", "cta", ctaLink)}
+					className="Gallery__cta"
+					href={ctaLink}
+				>
+					{ctaText}
+				</a>
 			</div>
 		</div>
 	)

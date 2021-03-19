@@ -4,4 +4,10 @@ html, body{
 	margin: 0;
 	font-family: $fontStack;
 	font-size: $fontSize;
+	background-color: $backgroundColor;
+	color: $textColor;
+	&.modal--open{
+		height: 100vh;
+		overflow-y: hidden;
+	}
 }
