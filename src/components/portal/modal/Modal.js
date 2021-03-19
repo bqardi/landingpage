@@ -24,7 +24,7 @@ function Modal({state, className, children, options = {escKey: true, backPress: 
 			}
 		}
 		return () => window.removeEventListener("keyup", keyPressHandler);
-	}, [options.escKey]);
+	}, [options.escKey, setOpen]);
 
 	function backgroundHandler(){
 		if (options.backPress) {
