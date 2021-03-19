@@ -16,7 +16,7 @@ function PlanCard({title, summary, price, link, features, getfrom, popular}){
 				<div className="PlanCardHeader__container">
 					<a
 							// eslint-disable-next-line
-						onClick={() => gtag("event", "cta", {type: title})}
+						onClick={() => gtag("event", "cta", {type: "A", title})}
 						href={link} className="PlanCardHeader__cta"
 					>
 						Try for <span className="PlanCardHeader__ctaUpper">free</span> &gt;
