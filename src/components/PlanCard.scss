@@ -71,13 +71,14 @@
 		}
 		&__cta{
 			$height: 60px;
+			$backcolor: hsl(120, 50%, 40%);
 			position: absolute;
 			bottom: $height / -2;
 			height: $height;
 			padding: 0 1rem;
 			text-decoration: none;
 			color: $backgroundColor;
-			background: linear-gradient(to bottom, lighten($secondaryColor, 15), $secondaryColor);
+			background: linear-gradient(to bottom, lighten($backcolor, 15), $backcolor);
 			border-radius: 3px;
 			display: flex;
 			justify-content: center;
