@@ -43,8 +43,10 @@ function CarouselItem({src, alt, text, ctaLink, ctaText}){
 				<p className="Gallery__text">{text}</p>
 				<a
 					onClick={
-						// eslint-disable-next-line
-						gtag("event", "cta", {ctaLink})
+						() => {
+							// eslint-disable-next-line
+							return gtag("event", "cta", {ctaLink})
+						}
 					}
 					className="Gallery__cta"
 					href={ctaLink}
